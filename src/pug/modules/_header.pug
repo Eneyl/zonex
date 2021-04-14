@@ -1,0 +1,22 @@
+header.header(data-id="header")
+  .container.header__container(data-id="header-container")
+    nav.nav.header__nav
+      +headerMenuItem("Home", "#")
+      +headerMenuItem("Shop", "#")
+      +headerMenuItem("Elements")(class="nav__link--current")
+      +headerMenuItem("Blog", "#")
+      +headerMenuItem("Page", "#")
+    .logo.header__logo(data-id="logo")
+      a.logo__link(href="#" area-label="logo")
+        include ../../assets/img/logo_zonex.icon.svg
+    .shop-nav.header__shop-nav(data-id="shop-nav")
+      .shop-nav__item.search-form
+        button
+          i.fas.fa-search
+      .shop-nav__item.user
+        a(href="#").user__link
+          i.fas.fa-user
+      .shop-nav__item.cart
+        button.cart__btn
+          i.fas.fa-shopping-cart
+          span(data-id="cart-counter") 3

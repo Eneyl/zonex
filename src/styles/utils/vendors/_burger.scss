@@ -1,0 +1,93 @@
+//<SETTINGS BURGER>===========================
+$burger-height: 3px;
+$burger-width: 30px;
+$burger-gutter: 7px;
+$burger-color: var(--color-text-main);
+$burger-border-radius: 0;
+$burger-transition-duration: 0.3s;
+//</SETTINGS BURGER>===========================
+
+// Burger
+@mixin burger() {
+  position: relative;
+  margin-top: $burger-height + $burger-gutter;
+  margin-bottom: $burger-height + $burger-gutter;
+  user-select: none;
+
+  &,
+  &::before,
+  &::after {
+    display: block;
+    width: $burger-width;
+    height: $burger-height;
+    background-color: $burger-color;
+    outline: 1px solid transparent; // 1
+
+    @if $burger-border-radius != 0 {
+      border-radius: $burger-border-radius;
+    }
+
+    transition-property: background-color, transform;
+    transition-duration: $burger-transition-duration;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+  }
+
+  &::before {
+    top: -($burger-height + $burger-gutter);
+  }
+
+  &::after {
+    top: $burger-height + $burger-gutter;
+  }
+}
+
+// Select parts of the burger
+@mixin burger-parts {
+  &,
+  &::before,
+  &::after {
+    @content;
+  }
+}
+
+@mixin burger-top {
+  &::before {
+    @content;
+  }
+}
+
+@mixin burger-middle {
+  & {
+    @content;
+  }
+}
+
+@mixin burger-bottom {
+  &::after {
+    @content;
+  }
+}
+
+// Burger animations
+@mixin burger-to-cross($color: auto) {
+  & {
+    background-color: transparent;
+  }
+  @if ($color != auto) {
+    &::before,
+    &::after {
+      background-color: $color;
+    }
+  }
+  &::before {
+    transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+  }
+  &::after {
+    transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+  }
+}

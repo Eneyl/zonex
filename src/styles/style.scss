@@ -1,0 +1,12 @@
+@import './utils/root-vars';
+@import './utils/mixins';
+@import './utils/fonts';
+@import './utils/vendors';
+@import './utils/settings';
+
+//<COMPONENTS>================================================================================
+@import './components/header';
+@import './components/hero';
+@import './components/marketing_popup';
+@import './components/firts_banners';
+//</COMPONENTS>===============================================================================

@@ -1,0 +1,50 @@
+.marketing-popup {
+  position: fixed;
+  z-index: 10;
+  bottom: 50px;
+  //display: none; //УБРАТЬ
+  width: 280px;
+  height: 113px;
+  padding: 10px;
+  background-color: var(--color-white);
+  transform: translateX(-150vw);
+  transition: transform 1.5s ease-in-out;
+  @extend %flex;
+
+  &--show {
+    transform: translateX(40px);
+  }
+  &__left {
+    padding-left: 26%;
+    @extend %ibg;
+  }
+  &__right {
+    padding: 4px 39px 4px 12px;
+  }
+  &__uptitle {
+    margin-bottom: 10px;
+    color: var(--color-text-gray);
+    font-size: 11px;
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  &__subtitle {
+    color: var(--color-text-gray);
+    font-size: 11px;
+  }
+  &__close {
+    position: absolute;
+    top: 10;
+    right: 14;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  &__watch {
+    position: absolute;
+    right: 10;
+    bottom: 13;
+    font-size: 13px;
+  }
+}

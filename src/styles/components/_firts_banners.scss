@@ -1,0 +1,33 @@
+.first-banners {
+  &__container {
+    padding-top: 49px;
+    @extend %flex;
+  }
+  &__item {
+    position: relative;
+    flex: calc(100% / 3);
+    padding-top: 16%;
+    @extend %ibg;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &__content {
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 10%;
+    width: 38%;
+    @media (max-width: 1245px) {
+      width: 55%;
+    }
+  }
+  &__title {
+    margin-bottom: 23px;
+    line-height: 1.1;
+    @include adaptive-font(36, 20);
+  }
+  &__link {
+    @extend %main-link;
+  }
+}

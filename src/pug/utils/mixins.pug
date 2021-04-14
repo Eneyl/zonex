@@ -1,0 +1,17 @@
+mixin headerMenuItem(title, href)
+  -var atrClass = attributes.class ? attributes.class : ''
+  if atrClass
+    li(class="nav__item")
+      a(class= "nav__link" + " " + atrClass)= title
+  else
+    li(class="nav__item")
+      a(class= "nav__link" ,href= href)= title
+    
+   
+mixin firstBunnerItem(title, imageUri)
+  .first-banners__item
+    .first-banners__content
+      h2.first-banners__title= title
+      a.first-banners__link(href="#") Shop Now
+    img.first-banners__img(src= imageUri, alt="") 
+

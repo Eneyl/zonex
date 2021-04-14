@@ -1,0 +1,11 @@
+.marketing-popup(data-id="marketing-popup")
+  .marketing-popup__left 
+    img(src=require('../../assets/img/product-image.jpg').default, alt="", , aria-label="Product")
+  .marketing-popup__right
+    p.marketing-popup__uptitle Someone purchaed a 
+    p.marketing-popup__title(data-id="marketing-popup-title") -
+    p.marketing-popup__subtitle #[span(data-id="marketing-popup-time") -] minutes ago #[span(data-id="marketing-popup-place") -]
+  .marketing-popup__close(data-id="marketing-popup-close", aria-label="Close popup")
+    i.fas.fa-times
+  a.marketing-popup__watch(href="", , aria-label="Watch to product") 
+    i.fas.fa-eye

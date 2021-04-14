@@ -1,0 +1,24 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Zonex';
+  - var description = 'Online shop';
+
+block head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(name="description", content=description)
+  script(src="https://kit.fontawesome.com/dad155261d.js" crossorigin="anonymous")
+  title #{title}
+
+block header
+  include ../modules/_header.pug
+
+block content
+  include ../modules/_hero.pug
+  include ../modules/_marketing_popup.pug
+  include ../modules/_first_banners.pug
+
+  
+block footer
+  include ../modules/_footer.pug
